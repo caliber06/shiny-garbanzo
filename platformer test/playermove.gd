@@ -24,3 +24,4 @@ func _physics_process(delta):
 	if Input.is_action_just_pressed("jump"):
 		if is_on_floor():
 			velocity.y = jump_speed - abs(velocity.x*0.25)
+	rotation_degrees += velocity.x * delta
