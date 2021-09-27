@@ -1,0 +1,51 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Wall.tscn" type="PackedScene" id=2]
+[ext_resource path="res://background1.png" type="Texture" id=3]
+[ext_resource path="res://Box.tscn" type="PackedScene" id=4]
+[ext_resource path="res://light.png" type="Texture" id=5]
+
+[node name="Level" type="Node2D"]
+
+[node name="BG" type="Sprite" parent="."]
+modulate = Color( 0.2, 0.2, 0.2, 1 )
+position = Vector2( 512, 288 )
+scale = Vector2( 16, 16 )
+z_index = -1
+texture = ExtResource( 3 )
+
+[node name="Player" parent="." instance=ExtResource( 1 )]
+position = Vector2( 181.672, 367.913 )
+
+[node name="Wall" parent="." instance=ExtResource( 2 )]
+position = Vector2( 512, 568 )
+scale = Vector2( 16, 1 )
+
+[node name="Wall2" parent="." instance=ExtResource( 2 )]
+position = Vector2( 58.7338, 0 )
+rotation = 0.785398
+scale = Vector2( 16, 1 )
+
+[node name="Box" parent="." instance=ExtResource( 4 )]
+position = Vector2( 828.633, 507.245 )
+
+[node name="Box2" parent="." instance=ExtResource( 4 )]
+position = Vector2( 751.616, 449.288 )
+
+[node name="Box3" parent="." instance=ExtResource( 4 )]
+position = Vector2( 770.401, 507.245 )
+
+[node name="Box4" parent="." instance=ExtResource( 4 )]
+position = Vector2( 714.842, 507.245 )
+
+[node name="Box5" parent="." instance=ExtResource( 4 )]
+position = Vector2( 25.814, 507.245 )
+
+[node name="Light2D" type="Light2D" parent="."]
+position = Vector2( -705.177, 69.8467 )
+texture = ExtResource( 5 )
+texture_scale = 20.31
+energy = 1.35
+shadow_enabled = true
+shadow_color = Color( 1, 1, 1, 0 )
