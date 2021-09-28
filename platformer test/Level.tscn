@@ -29,14 +29,11 @@ adjustment_saturation = 0.66
 [node name="Level" type="Node2D"]
 
 [node name="BG" type="Sprite" parent="."]
-modulate = Color( 0.2, 0.2, 0.2, 1 )
-position = Vector2( 512, 288 )
-scale = Vector2( 16, 16 )
+modulate = Color( 0.25098, 0.25098, 0.25098, 1 )
+scale = Vector2( 512, 512 )
 z_index = -1
 texture = ExtResource( 3 )
-__meta__ = {
-"_edit_lock_": true
-}
+region_rect = Rect2( 0, 0, 10000, 10000 )
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
 position = Vector2( 0, 400.44 )
@@ -49,6 +46,31 @@ scale = Vector2( 16, 1 )
 position = Vector2( 58.7338, 0 )
 rotation = 0.785398
 scale = Vector2( 16, 1 )
+
+[node name="Wall3" parent="." instance=ExtResource( 2 )]
+position = Vector2( -381.112, 781.528 )
+rotation = 2.76733
+scale = Vector2( 16, 1 )
+
+[node name="Wall4" parent="." instance=ExtResource( 2 )]
+position = Vector2( -621.664, 564.322 )
+rotation = 2.56494
+scale = Vector2( 7.93027, 10.8965 )
+
+[node name="Wall5" parent="." instance=ExtResource( 2 )]
+position = Vector2( -792.641, -20.765 )
+rotation = 3.24382
+scale = Vector2( 7.93027, 28.2516 )
+
+[node name="Wall7" parent="." instance=ExtResource( 2 )]
+position = Vector2( 1210.39, 769.657 )
+rotation = 3.66068
+scale = Vector2( 8.67236, 3.43469 )
+
+[node name="Wall6" parent="." instance=ExtResource( 2 )]
+position = Vector2( -131.929, -1047.7 )
+rotation = 4.48071
+scale = Vector2( 7.93027, 28.2516 )
 
 [node name="Box" parent="." instance=ExtResource( 4 )]
 position = Vector2( 828.633, 507.245 )
@@ -63,12 +85,10 @@ position = Vector2( 770.401, 507.245 )
 position = Vector2( 714.842, 507.245 )
 
 [node name="Box5" parent="." instance=ExtResource( 4 )]
-position = Vector2( 25.814, 507.245 )
-
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource( 1 )
+position = Vector2( 78.814, 508.245 )
 
 [node name="house3" parent="." instance=ExtResource( 5 )]
+modulate = Color( 0.380392, 0.380392, 0.380392, 1 )
 position = Vector2( 1033.93, 183.958 )
 rotation = 0.364862
 scale = Vector2( 0.604352, 0.604352 )
@@ -80,7 +100,11 @@ rotation = 0.147639
 z_index = -1
 
 [node name="house2" parent="." instance=ExtResource( 5 )]
-position = Vector2( 173.377, 404.558 )
+modulate = Color( 0.388235, 0.388235, 0.388235, 1 )
+position = Vector2( 183.479, 405.68 )
 rotation = -0.139926
 scale = Vector2( 0.790797, 0.790797 )
 z_index = -1
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource( 1 )

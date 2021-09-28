@@ -1,12 +1,8 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://player.png" type="Texture" id=1]
 [ext_resource path="res://light.png" type="Texture" id=2]
 [ext_resource path="res://playermove.gd" type="Script" id=3]
-
-[sub_resource type="CapsuleShape2D" id=1]
-radius = 15.8515
-height = 19.1537
 
 [node name="Player" type="Node2D"]
 
@@ -18,10 +14,16 @@ texture = ExtResource( 2 )
 texture_scale = 5.0
 energy = 0.98
 shadow_enabled = true
+shadow_gradient_length = 5.8
+shadow_filter = 5
+shadow_filter_smooth = 4.6
+__meta__ = {
+"_edit_lock_": true
+}
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="KinematicBody2D"]
+[node name="CollisionShape2D" type="CollisionPolygon2D" parent="KinematicBody2D"]
 position = Vector2( 0, -7.91352 )
-shape = SubResource( 1 )
+polygon = PoolVector2Array( 0, -24.0865, -8, -24.0865, -16, -16.0865, -16, -0.0864801, -8, 7.91352, -16, 7.91352, -16, 15.9135, -8, 23.9135, 8, 23.9135, 16, 15.9135, 16, 7.91352, 8, 7.91352, 16, -0.0864801, 16, -16.0865, 8, -24.0865 )
 
 [node name="Camera2D" type="Camera2D" parent="KinematicBody2D"]
 current = true
@@ -31,3 +33,6 @@ smoothing_enabled = true
 position = Vector2( 2, 1.43051e-06 )
 scale = Vector2( 0.143795, 0.143795 )
 texture = ExtResource( 1 )
+
+[node name="detectnormal" type="RayCast2D" parent="KinematicBody2D"]
+cast_to = Vector2( 0, 12 )

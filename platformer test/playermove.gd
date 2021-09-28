@@ -6,6 +6,7 @@ var gravity = 1000
 
 var velocity = Vector2.ZERO
 
+
 func get_input():
 	if Input.is_action_pressed("right"):
 			velocity.x += speed
@@ -19,9 +20,15 @@ func get_input():
 
 func _physics_process(delta):
 	get_input()
+	if is_on_floor():
+		rotation = lerp_angle(rotation,(get_floor_normal().angle() + PI/2),0.125)
+	
+	rotation = lerp_angle(rotation,velocity.x/1000,0.125)
 	velocity.y += gravity * delta
 	velocity = move_and_slide(velocity, Vector2.UP)
 	if Input.is_action_just_pressed("jump"):
 		if is_on_floor():
 			velocity.y = jump_speed - abs(velocity.x*0.25)
-	rotation_degrees += velocity.x * delta
+			
+	
+
